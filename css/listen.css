@@ -1,0 +1,58 @@
+.contenedor{
+    display: grid;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.hijo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 350px;
+    /* border: 1px solid black; */
+    padding: 15px;
+}
+
+/* input[type='image']{
+    width: 50px;
+} */
+.sonidoNormal{
+    width: 150px;
+    
+}
+.sonidoLento{
+    width: 80px;
+    
+}
+
+
+.respuestaMostrada{
+    grid-column: span 2;
+    height: 20px;
+    visibility:hidden
+}
+
+
+
+.inputEscribir{
+    grid-column: span 2;
+    display: grid;
+    column-gap: 5px;
+    grid-template-columns: auto 10%;
+    justify-items: center;
+    align-items: center;
+}
+.escribirRespuesta{
+    height: 30px;
+    font-size: 120%;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0;
+    text-align: center;
+}
+.mostrarRespuesta{
+    width: 100%;
+    margin: 0;
+}

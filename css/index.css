@@ -1,0 +1,445 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+    /* background-color: blueviolet; */
+}
+html{
+    font-size: 16px;
+}
+
+.cajaDePalabras{
+    display: grid;
+    width: 100%;
+    margin-top: 1.25rem;
+    row-gap: 1.25rem;
+    column-gap: 1.25rem;
+    grid-template-columns: repeat(auto-fill,15.625rem);
+    /* grid-auto-flow: dense;   */
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    box-sizing: border-box;
+    padding: 1.25rem;
+    /* align-items: baseline; */
+}
+@media screen and (max-width: 600px){
+    html{
+        font-size: 10px;
+    }
+    /* .cajaDePalabras{
+        grid-template-columns: auto auto;
+        justify-content: center;
+    } */
+    
+    
+  }
+.palabra{
+    width: 15.625rem;
+    display: grid;
+    grid-auto-flow: row;
+    border: none;
+    box-shadow: 0rem 0rem 0.625rem rgba(51, 51, 51, 0.493);
+    align-items: center;
+    padding: 0.625rem 0;
+    row-gap: 0.625rem;
+    border-radius: 2.5rem;
+    box-sizing: border-box;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+.palabra:hover{
+    /* box-shadow: 0rem 0rem 20px #000000a1; */
+    outline: 3px solid blue;
+    background-color: rgba(65, 105, 225, 0.082);
+    /* transform: scale(1.1);
+    z-index: 20; */
+
+}
+.imagen{
+    justify-self: center;
+}
+.imagen img,.imgPreview{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 1.5625rem;
+}
+.herramientas{
+    display: grid;
+    grid-template-columns: repeat(4,1fr) auto auto;
+    width: 100%;
+    align-items: center;
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    column-gap: 5px;
+}
+.elim,.mod,.sonido,.sonidoLento,.mover{
+    width: 1.875rem;
+    height: 1.875rem;
+}
+.sonido{
+    grid-column: 6/7;
+}
+.sonidoLento{
+    grid-column: 5/6;
+}
+.elim,.mod,.mover{
+    display: none;
+    /* background-color: white; */
+}
+.conf{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.frase{
+    font-size: 1.5625rem;
+    justify-self: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    
+}
+.traduccion{
+    font-size: 1.5625rem;
+
+    justify-self: center;
+    /* word-break:break-all; */
+    /* box-sizing: border-box; */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 100%;
+    text-align: center;
+}
+.fonetica{
+    font-size: 1.5625rem;
+    justify-self: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    color: rgba(0, 0, 0, 0.377);
+    width: 100%;
+    text-align: center;
+}
+.doble{
+    grid-column: span 2;
+    width: 100%;
+}
+.dobleImg{
+    grid-column: span 2;
+    grid-row: span 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 100%;
+}
+.diminuta{
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.normal{
+    grid-column: span 1;
+    grid-row: span 2;
+}
+/* .............................................................................................. */
+.mensaje{
+    background-color: springgreen;
+    padding: 1.25rem;
+    display: none;
+    color: rgba(0, 0, 0, 0.726);
+    font-size: 130%;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 25;
+}
+#form{
+    display: none;
+    background-color: rebeccapurple;
+}
+.cajaRegistrar{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 22.5rem;
+    border: 0.0625rem solid rgba(0, 0, 0, 0.589);
+    margin: 0 auto;
+    border-radius: 0.9375rem;
+    z-index: 5;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 50%;
+    transform: translatex(-50%);
+}
+.TituloCerrar{
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #012E52;
+    padding: 0.625rem;
+    color: white;
+    border-radius: 0.9375rem 0.9375rem 0 0;
+    box-sizing: border-box;
+}
+.TituloCerrar img{
+    width: 1.875rem;
+    justify-self: end;
+    align-self: center;
+}
+.accion{
+    align-self: center;
+    font-size: 1.5625rem;
+
+}
+.tituloRegistrar{
+    font-size: 1.5625rem;
+}
+.registrar{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0.625rem;
+    row-gap: 0.625rem;
+}
+.registrar input{
+    font-size: 1.25rem;
+    border-radius: 0.625rem;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: inherit;
+    padding: 0 0.625rem;
+    border: 0.125rem solid rgba(0, 0, 0, 0.664);
+}
+.botonesEnviar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.625rem;
+    box-sizing: border-box;
+}
+.botonesEnviar button{
+    background-color: #012E52;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    justify-self: start;
+    padding: 0.625rem 0rem;
+    border-radius: 1.25rem;
+    font-size: 0.9375rem;
+    border:none;
+    font-weight: bold;
+}
+.oscuro{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.52);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+.imgPreview{
+    display: none;
+    justify-self: center;
+}
+
+/* titulo y creacion....................................................*/
+.titulo{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* justify-content: end; */
+    padding-top: 0.9375rem;
+    column-gap: 0.625rem;
+    padding:10px;
+    gap: 10px;
+}
+ #titulo{
+    font-size: 2rem;
+}
+.titulo input{
+    width: 3.125rem;
+    height: 3.125rem;
+}
+.agregar{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+}
+/* .practicar{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+} */
+.titulo a button{
+    background-color: #012E52;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+#voces{
+    border: 2px solid #012E52;
+    color: #012E52;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+
+
+
+
+
+
+
+
+
+.modificacion{
+display: none;
+row-gap: 0.625rem;
+width: 22.5rem;
+/* min-width: 22.5rem;
+max-width: 31.25rem; */
+border: 0.0625rem solid rgba(0, 0, 0, 0.452);
+border-radius: 0.9375rem 0.9375rem 0.9375rem 0.9375rem;
+padding-bottom: 0.625rem;
+position: fixed;
+top: 0;
+left: 50%;
+transform: translatex(-50%);
+background-color: white;
+z-index: 10;
+box-sizing: border-box;
+
+}
+.filaModificacion{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* justify-content: space-between; */
+    padding: 0 0.625rem;
+    box-sizing: border-box;
+    column-gap: 0.3125rem;
+
+}
+.filaModificacion button{
+width: 6.25rem;
+}
+.tituloRegistrar{
+    width: 100%;
+}
+[id^="btnModificar"]{
+    background-color: green;
+    border: none;
+    border-radius: 0.9375rem;
+    /* width: 6.25rem; */
+    color: white;
+    justify-self: end;
+    height: 1.875rem;
+
+}
+[id^="btnCancelar"]{
+    background-color:crimson;
+    display: none;
+    border: none;
+    border-radius: 0.9375rem;
+    /* width: 5rem; */
+    color: white;
+    justify-self: end;
+    height: 1.875rem;
+    
+
+}
+[id^="inputModificar"]{
+display: none;
+box-sizing: border-box;
+width: 100%;
+background-color: burlywood;
+grid-column: 2 / 3;
+}
+[id^="infoModificar"]{
+    align-self: center;
+    font-size: 1.5625rem;
+    color: blue;
+    justify-self: center;
+    text-align: center;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    width: 100%;
+
+}
+.tituloMod{
+    justify-self: start;
+    width: 5rem;
+}
+
+
+#formEliminar{
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 20;
+    
+
+}
+#formEliminar > *{
+    padding: 15px;
+    width: 360px;
+    box-sizing: border-box;
+}
+#formEliminar > *:not(.cabeceraEliminar){
+    background-color: white;
+}
+.cabeceraEliminar{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: brown;
+    border-radius: 15px 15px 0 0;
+    color: white;
+    font-size: 25px;
+    z-index: 200;
+}
+.cabeceraEliminar img{
+    width: 30px;
+}
+.btnsElim{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    border-radius:0px 0px 15px 15px;
+}
+.btnsElim button{
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.btnsElim :nth-child(1){
+    background-color: green;
+    color: white;
+    border: none;
+}
+.btnsElim :nth-child(2){
+    background-color:red;
+    color: white;
+    border: none;
+}
+
+
+.conf{
+    justify-self: start;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+#voces{
+    width: 150px;
+}

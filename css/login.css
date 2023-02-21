@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+}
+.contenedor{
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    width: 100%;
+    
+}
+.titulo{
+    border-radius:15px 15px 0px 0px;
+    font-size: 35px;
+    text-align: center;
+    width: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    background-color: darkgreen;
+    color: white;
+
+}
+form{
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 10px;
+    width: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-top: none;
+    padding: 15px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+button{
+    margin-top: 10px;
+    border: none;
+    background-color: green;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    width: 120px;
+    justify-self: center;
+    border-radius: 10px;
+}
+#registro{
+    margin-top: 10px;
+    justify-self: center;
+}
+label{
+    font-size: 25px;
+}
+input{
+    border-radius: 10px;
+    border: 1px solid;
+    font-size: 20px;
+    color:rgba(0, 0, 0, 0.616);
+    text-align: center;
+    
+}
